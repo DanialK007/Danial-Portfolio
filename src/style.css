@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* npx tailwindcss -i ./src/style.css -o ./public/style.css --watch */
+
+@font-face {
+    font-family: 'myFont';
+    src: url('../font/apercu_medium_pro.otf') format('woff');
+}
+
+/* ::-webkit-scrollbar{
+    width: 0;
+} */
+
+*{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-color: #303030 #111111;
+    /* animation: appear 0.5s ease-in-out; */
+}
+
+@keyframes appear {
+    0%{
+        filter: brightness(0.5);
+    }
+    100%{
+        filter: brightness(1);
+    }
+}
+
+*:active{
+    outline: none;
+}
+
+body{
+    /* font-family: 'myfont', sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    background: url(../public/img/noise.svg);
+    background-size: 50%;
+    /* backdrop-filter: opacity(0.2); */
+    /* background: url("PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuZGV2L3N2Z2pzIiB2aWV3Qm94PSIwIDAgNzAwIDcwMCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiPjxkZWZzPjxmaWx0ZXIgaWQ9Im5ubm9pc2UtZmlsdGVyIiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHByaW1pdGl2ZVVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJsaW5lYXJSR0IiPg0KCTxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjE1MiIgbnVtT2N0YXZlcz0iNCIgc2VlZD0iMTUiIHN0aXRjaFRpbGVzPSJzdGl0Y2giIHg9IjAlIiB5PSIwJSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgcmVzdWx0PSJ0dXJidWxlbmNlIj48L2ZlVHVyYnVsZW5jZT4NCgk8ZmVTcGVjdWxhckxpZ2h0aW5nIHN1cmZhY2VTY2FsZT0iMTUiIHNwZWN1bGFyQ29uc3RhbnQ9IjAuNzUiIHNwZWN1bGFyRXhwb25lbnQ9IjIwIiBsaWdodGluZy1jb2xvcj0iIzlkOWQ5ZCIgeD0iMCUiIHk9IjAlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBpbj0idHVyYnVsZW5jZSIgcmVzdWx0PSJzcGVjdWxhckxpZ2h0aW5nIj4NCiAgICAJCTxmZURpc3RhbnRMaWdodCBhemltdXRoPSIzIiBlbGV2YXRpb249IjEwMCI+PC9mZURpc3RhbnRMaWdodD4NCiAgCTwvZmVTcGVjdWxhckxpZ2h0aW5nPg0KICANCjwvZmlsdGVyPjwvZGVmcz48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0idHJhbnNwYXJlbnQiPjwvcmVjdD48cmVjdCB3aWR0aD0iNzAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0iIzlkOWQ5ZCIgZmlsdGVyPSJ1cmwoI25ubm9pc2UtZmlsdGVyKSI+PC9yZWN0Pjwvc3ZnPg=="); */
+}
+
+body *{
+    overflow: hidden;
+}
+
+.scale-800 {
+    --tw-scale-x: 8;
+    --tw-scale-y: 8;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-500 {
+    --tw-scale-x: 5;
+    --tw-scale-y: 5;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-300 {
+    --tw-scale-x: 3;
+    --tw-scale-y: 3;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.myAnimation1{
+    animation: myAnimation1 1s ease-in-out;
+}
+
+@keyframes myAnimation1 {
+    0% { opacity: 0; }
+    /* 50% { opacity: 0; } */
+    100% { opacity: 1; }
+}
+
+.myAnimation2{
+    animation: myAnimation2 1s ease-in-out;
+}
+
+@keyframes myAnimation2 {
+    0% { opacity: 0; }
+    /* 50% { opacity: 0; } */
+    100% { opacity: 1; }
+}
+
+#cornorMenu {
+    transition: opacity 0.5s ease-in-out;
+    /* opacity: 0;  */
+    /* Initially hidden */
+}
+
+.animate-appear1 {
+    animation: slide-in-left 1.2s ease forwards;
+}
+
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-appear2 {
+    animation: slide-in-right 1.2s ease forwards;
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-appear3 {
+    animation: slide-in-bottom 0.5s ease-out forwards;
+}
+
+@keyframes slide-in-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+        backdrop-filter: blur(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        backdrop-filter: blur(10px);
+    }
+}
+
+#selectW, #sWork, #playG, #pGround {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+#selectW.animate-appear1, #playG.animate-appear1, #sWork.animate-appear2, #pGround.animate-appear2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.h-102{
+    height: 36rem/* 384px */;
+}
+
+@keyframes spin10X {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.animate-spin10X {
+    animation: spin10X 5s linear infinite;
+}
+
+.animate-foot{
+    animation: foot 2s ease-in-out infinite;
+}
+
+@keyframes foot {
+    0% { 
+        letter-spacing: 0px;
+    }
+    50% { 
+        letter-spacing: 10px;
+    }
+    0% { 
+        letter-spacing: 0px;
+    }
+}
+
+.hiThere{
+    animation: 1.5s hiThere ease-in-out;
+    
+}
+
+@keyframes hiThere {
+    0%{
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.Iam{
+    animation: 1.5s Iam ease-in-out;
+    
+}
+
+@keyframes Iam {
+    0%{
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.kCube{
+    animation: 3s kCube ease-in-out;
+}
+
+@keyframes kCube {
+    0%,50%{
+        opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+}
+
+
+
+
+
+
+/* overide tailwind */
+.text-white {
+    --tw-text-opacity: 1;
+    color: rgb(200 200 200 / var(--tw-text-opacity));
+}
+
+.text-5xl {
+    font-size: 3rem/* 48px */;
+    line-height: 1;
+}
+
+.text-7xl {
+    font-size: 4.5rem/* 72px */;
+    line-height: 1.1;
+}
+
+.text-8xl {
+    font-size: 6.5rem/* 96px */;
+    line-height: 0.9;
+}
+
+.text-9xl {
+    font-size: 10rem/* 128px */;
+    line-height: 1.2;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.animate-spin {
+    animation: spin 5s linear infinite;
+}
+
+@media (min-width: 1280px) {
+    .xl\:text-10xl {
+        font-size: 10rem !important/* 128px */;
+        line-height: 1;
+        overflow: hidden !important;
+    }
+}
