@@ -1,477 +1,1045 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- npx tailwindcss -i ./src/style.css -o ./public/style.css --watch -->
+  <!-- npx tailwindcss -i ./src/style.css -o ./public/style.css --watch -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Danial's Portfolio</title>
-    <link rel="icon" href="public/img/cube.svg">
-    <link rel="stylesheet" href="public/style.css">
-</head>
+    <link rel="icon" href="public/img/cube.svg" />
+    <link rel="stylesheet" href="public/style.css" />
+  </head>
 
-<body class="bg-zinc-950 text-white">
+  <body class="bg-zinc-950 text-white">
     <!-- Navigation Bar -->
-    <nav class="flex justify-between p-3 fixed w-screen top-0 bg-gradient-to-b from-black/90 to-50% to-black/0 z-40 md:px-12">
+    <nav>
+      <div
+        class="flex justify-between p-3 fixed w-screen top-0 bg-gradient-to-b from-black/90 to-60% to-transparent z-40 md:px-12"
+      >
         <a href="" class="pt-1">
-            <img src="public/img/Kcube.svg" alt="" class="h-14">
+          <img src="public/img/Kcube.svg" alt="" class="h-14" />
         </a>
-        <button class="my-2 h-12 me-1 flex items-center md:hidden backdrop-blur rounded-xl border border-white/10 bg-white/5" id="menuBtn">
-            <img src="public/img/menu.svg" id="menuIcon1" alt="" class="h-12 w-12 p-4">
-            <img src="public/img/cube.svg" id="menuIcon2" alt="" class="hidden h-12 w-12 p-3 animate-spin10X saturate-0">
+        <button
+          class="my-2 h-12 me-1 flex items-center md:hidden backdrop-blur rounded-xl border border-white/10 bg-white/5"
+          id="menuBtn"
+        >
+          <img
+            src="public/img/menu.svg"
+            id="menuIcon1"
+            alt=""
+            class="h-12 w-12 p-4"
+          />
+          <img
+            src="public/img/cube.svg"
+            id="menuIcon2"
+            alt=""
+            class="hidden h-12 w-12 p-3 animate-spin10X saturate-0"
+          />
         </button>
-    </nav>
-    <div id="smMenu" class="hidden fixed top-20 right-4 z-40">
+      </div>
+      <div id="smMenu" class="hidden md:hidden fixed top-20 right-4 z-40">
         <ul class="p-3 flex flex-col gap-3 bg-black/40 rounded-md">
-            <li class="hover:text-red-500">
-                <div class="text-gray-500 font-bold font-mono">01</div>
-                <a href="#work" class="font-semibold">Work</a>
-            </li>
-            <li class="hover:text-red-500">
-                <div class="text-gray-500 font-bold font-mono">02</div>
-                <a href="#playground" class="font-semibold">Playground</a>
-            </li>
-            <li class="hover:text-red-500">
-                <div class="text-gray-500 font-bold font-mono">03</div>
-                <a href="#about" class="font-semibold">About Me</a>
-            </li>
-            
+          <li class="hover:text-red-500">
+            <div class="text-gray-500 font-bold font-mono">01</div>
+            <a href="#work" class="font-semibold">Work</a>
+          </li>
+          <li class="hover:text-red-500">
+            <div class="text-gray-500 font-bold font-mono">02</div>
+            <a href="#playground" class="font-semibold">Playground</a>
+          </li>
+          <li class="hover:text-red-500">
+            <div class="text-gray-500 font-bold font-mono">03</div>
+            <a href="#about" class="font-semibold">About Me</a>
+          </li>
         </ul>
-    </div>
-    <div class="hidden fixed top-3 right-10 z-40 md:flex gap-5 p-3 text-xs myAnimation2 bg-black/65 rounded-lg" id="cornorMenu">
+      </div>
+      <div
+        class="hidden fixed top-3 right-10 z-40 md:flex gap-5 p-3 text-xs myAnimation2 bg-black/20 backdrop-blur-lg rounded-lg"
+        id="cornorMenu"
+      >
         <a href="#work" class="px-3 hover:text-red-500">
-            <div class="font-mono">01</div>
-            <div class="font-semibold">Work</div>
+          <div class="font-mono">01</div>
+          <div class="font-semibold">Work</div>
         </a>
         <a href="#playground" class="px-3 hover:text-red-500">
-            <div class="font-mono">02</div>
-            <div class="font-semibold">Playground</div>
+          <div class="font-mono">02</div>
+          <div class="font-semibold">Playground</div>
         </a>
         <a href="#about" class="px-3 hover:text-red-500">
-            <div class="font-mono">03</div>
-            <div class="font-semibold">About Me</div>
+          <div class="font-mono">03</div>
+          <div class="font-semibold">About Me</div>
         </a>
-    </div>
+      </div>
+    </nav>
 
     <!-- Side Bar -->
-    <div class="fixed -right-3 bottom-32 p-3 -rotate-90 z-20 bg-black/95">Honors</div>
+    <a
+      href="tel:+959255599863"
+      class="fixed -right-3 bottom-32 p-3 -rotate-90 z-20 bg-black/95"
+    >
+      Contact
+    </a>
 
     <main>
-        <!-- hero -->
-        <div id="hero" class="relative flex flex-col pt-44 md:pt-48 pb-48 md:pb-28 md:ps-80 md:font-semibold">
-            <div class="absolute -z-10 top-60 md:top-32 left-32 md:left-0 w-full md:w-auto md:ps-32">
-                <div class="relative">
-                    <img src="public/img/avatar1.png" alt="" class="brightness-90 md:brightness-95 md:mx-auto">
-                    <div class="absolute h-40 w-full bottom-0 bg-gradient-to-t from-zinc-950 to-50% to-black/0"></div>
-                </div>
-            </div>
-            <!-- <div class="absolute bg-gradient-to-b from-black/0 to-black h-20 w-full bottom-0"></div> -->
-
-                <div class="cap1 inline-block md:hidden cursor-context-menu md:text-gray-50 w-64 ps-5 text-8xl xl:text-10xl">HEY</div>
-                <div class="cap1 inline-block md:hidden cursor-context-menu md:text-gray-50 w-64 ps-5 text-8xl xl:text-10xl">IAM</div>
-                <div class="cap1 hidden md:inline-block cursor-context-menu md:text-gray-50 mx-auto text-8xl xl:text-10xl hiThere">HI THERE</div>
-                <div class="cursor-context-menu inline-block md:flex md:items-center md:justify-center md:w-full ps-5 relative w-52">
-                    <div class="cap1 hidden md:block text-9xl pe-4 md:text-gray-50 xl:text-10xl Iam">I AM</div>
-                    <div class="cap1 relative md:pe-8 flex items-end kCube pb-3">
-                        <img src="public/img/Kstroke.svg" alt="" class="w-36 h-36 p-2 xl:h-60 xl:p-2 xl:ms-5 md:p-4 brightness-75 md:brightness-100">
-                        <span class="hidden xl:inline-block xl:text-7xl pb-12 text-gray-50 font-bold font-mono ps-1">cube</span>
-                        <img src="public/img/cube.svg" alt="" class="w-14 absolute right-0 top-1/3 animate-spin z-20 cursor-pointer hover:invert hover:w-16 duration-500">
-                    </div>
-                </div>
+      <!-- hero -->
+      <div
+        id="top"
+        class="h-screen relative flex flex-col items-center justify-center"
+      >
+        <div
+          class="absolute -top-10 -right-20 md:right-20 w-96 h-32 -rotate-45 rounded-[100%] bg-gradient-to-r blur-3xl from-blue-500 to-red-500 bl ur-2xl"
+        ></div>
+        <div
+          class="absolute bottom-44 -left-80 md:-left-20 w-[600px] h-20 rotate-12 rounded-[100%] bg-gradient-to-r blur-3xl from-cyan-500 to-indigo-500 bl ur-2xl"
+        ></div>
+        <div
+          class="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold uppercase"
+        >
+          Hi, Welcome home
         </div>
-        <a href="#scroll" id="scroll" class="flex xl:ms-12 flex-col items-center w-24 p-4 mt-10 animate-pulse">
-            <div class="font-mono">SCROLL</div>
-            <div class="animate-bounce p-2">
-                <div class="rotate-90">>></div>
-            </div>
+        <div
+          class="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold uppercase flex"
+        >
+          It's me,
+          <span class="capitalize ps-5 relative pb-5 md:pb-3 lg:pb-2"
+            >Kcube
+            <div
+              class="absolute left-0 bottom-0 w-full text-end px-1 text-[0.5rem] md:text-xs uppercase font-normal"
+            >
+              Kaung Khant Kyaw
+            </div> </span
+          ><img
+            src="public/img/cube.svg"
+            alt=""
+            class="w-8 animate-spin mb-5 cursor-pointer hover:invert duration-300"
+          />
+        </div>
+        <a
+          href="#scroll"
+          id="scroll"
+          class="flex xl:ms-12 flex-col absolute bottom-0 left-0 items-center w-24 p-4 mt-10 animate-pulse"
+        >
+          <div class="font-mono">SCROLL</div>
+          <div class="animate-bounce p-2">
+            <div class="rotate-90">>></div>
+          </div>
         </a>
-
-        <!-- intro -->
-        <div id="intro">
-            <div class="grid grid-cols-1 xl:grid-cols-2">
-                <div class="col-span-1 xl:p-8">
-                    <div class="text-4xl xl:text-5xl text-white/40 p-5">Junior <span class="text-white">Frontend Developer </span>dedicated to the <span class="text-white">craft</span> of creating <span class="text-white">0➝1</span> digital experiences till the last <span class="text-white">detail</span>.</div>
-                    <div class="grid grid-cols-2 py-4">
-                        <div class="p-5 text-white/30 text-sm">I've done multiple frontend projects with <span class="text-white">High Quality Contents</span>.</div>
-                        <div class="p-5 text-white/30 text-sm">Currently, learning at <span class="text-white">MIBA university</span>.</div>
-                    </div>
-                </div>
-                <div class="hidden col-span-1 xl:flex items-center justify-center">
-                    <img src="public/img/Radilson Gomes - Portfolio 2023 - Google Chrome 4_19_2024 1_33_10 PM.png" alt="" class="cap2 h-102 object-cover saturate-0 hover:saturate-100 duration-500 hover:scale-105">
-                </div>
-            </div>
+      </div>
+      <div
+        id="hero"
+        class="relative hidden flex flex-col pt-44 md:pt-48 pb-48 md:pb-28 md:ps-80 md:font-semibold"
+      >
+        <div
+          class="absolute -z-10 top-60 md:top-32 left-32 md:left-0 w-full md:w-auto md:ps-32"
+        >
+          <div class="relative">
+            <img
+              src="public/img/avatar1.png"
+              alt=""
+              class="brightness-90 md:brightness-95 md:mx-auto"
+            />
+            <div
+              class="absolute h-40 w-full bottom-0 bg-gradient-to-t from-zinc-950 to-50% to-black/0"
+            ></div>
+          </div>
         </div>
+        <!-- <div class="absolute bg-gradient-to-b from-black/0 to-black h-20 w-full bottom-0"></div> -->
 
-        <!-- select work -->
-        <div id="work" class="my-5 xl:mt-20">
-            <div class="py-8">
-                <div class="flex justify-center cap1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-10xl">
-                    <span class="font-thin" id="selectW">SELECT</span>
-                    <img src="public/img/cube.svg" class="hover:invert duration-500 hover:cursor-pointer w-4 md:w-10 xl:w-16 animate-spin" alt=""> 
-                    <span class="italic font-bold pe-2" id="sWork">WORK</span>
-                </div>
-                <div class="flex justify-between text-sm font-mono px-5">
-                    <div class="">CASE STUDIES</div>
-                    <div class="">DESIGN PROCESS</div>
-                </div>
-            </div>
-            <div class="flex flex-col lg:flex-row p-5 gap-3">
-                <div class="p-2 lg:saturate-0 hover:scale-90 lg:hover:scale-100 hover:saturate-100 duration-500 bg-white/5 rounded-3xl border border-white/10 w-full lg:w-1/3 lg:hover:w-5/12 lg:brightness-50 hover:brightness-100">
-                    <div class="p-5 rounded-2xl text-lg font-semibold text-gray-200 bg-green-600 flex justify-between">
-                        <div class="">BootStrap</div>
-                        <div class="font-mono">2023</div>
-                    </div>
-                    <div class="bg-green-600 brightness-75 relative h-96 mt-3 rounded-2xl flex items-center justify-center">
-                        <div class="cap2 absolute w-full h-full duration-300 z-10 flex flex-col justify-between p-5">
-                            <img src="public/img/bootstrap-logo.png" alt="" class="w-14 opacity-60 saturate-0 brightness-200">
-                            <div class="text-xl xl:text-2xl brightness-200 text-gray-50">
-                                <div class="">CSS Framework</div>
-                                <div class="italic">Virtual Tour</div>
-                            </div>
-                        </div>
-                        <img src="public/img/Macbook_Air_Mockup_4b.png" alt="" class="xl:h-2/ rounded-2xl">
-                    </div>
-                </div>
-                <div class="p-2 lg:saturate-0 hover:scale-90 lg:hover:scale-100 hover:saturate-100 duration-500 bg-white/5 rounded-3xl border border-white/10 w-full lg:w-1/3 lg:hover:w-5/12 lg:brightness-50 hover:brightness-100">
-                    <div class="p-5 rounded-2xl text-lg font-semibold text-gray-200 bg-indigo-600 flex justify-between">
-                        <div class="">Tailwind</div>
-                        <div class="font-mono">2024</div>
-                    </div>
-                    <div class="bg-indigo-600 brightness-75 relative h-96 mt-3 rounded-2xl flex items-center justify-center">
-                        <div class="cap2 absolute w-full h-full duration-300 z-10 flex flex-col justify-between p-5">
-                            <img src="public/img/tailwind-logo.png" alt="" class="w-12 opacity-60 saturate-0 brightness-200 p-1">
-                            <div class="text-xl xl:text-2xl brightness-200 text-gray-50">
-                                <div class="">CSS Framework</div>
-                                <div class="italic">Platform for Developers</div>
-                            </div>
-                        </div>
-                        <img src="public/img/preview-min.png" alt="" class="h-2/5 xl:h-2/3 rounded-lg">
-                    </div>
-                </div>
-                <div class="p-2 lg:saturate-0 hover:scale-90 lg:hover:scale-100 hover:saturate-100 duration-500 bg-white/5 rounded-3xl border border-white/10 w-full lg:w-1/3 lg:hover:w-5/12 lg:brightness-50 hover:brightness-100">
-                    <div class="p-5 rounded-2xl text-lg font-semibold text-gray-200 bg-sky-600 flex justify-between">
-                        <div class="">React</div>
-                        <div class="font-mono">2024</div>
-                    </div>
-                    <div class="bg-sky-600 brightness-75 relative h-96 mt-3 rounded-2xl flex items-center justify-center xl:p-5">
-                        <div class="cap2 absolute w-full h-full duration-300 z-10 flex flex-col justify-between p-5">
-                            <img src="public/img/react-logo.png" alt="" class="w-12 opacity-60 saturate-0 brightness-200 p-1">
-                            <div class="text-xl xl:text-2xl brightness-200 text-gray-50">
-                                <div class="">Javascript Library</div>
-                                <div class="italic">For Local Retailers</div>
-                            </div>
-                        </div>
-                        <img src="public/img/Trending Tailwind templates _ Tailwind Awesome - Google Chrome 4_18_2024 5_19_34 PM-min.png" alt="" class="h-2/5 xl:h-2/3 rounded-lg shadow-lg">
-                    </div>
-                </div>
-            </div>
+        <div
+          class="cap1 inline-block md:hidden cursor-context-menu md:text-gray-50 w-64 ps-5 text-8xl xl:text-10xl"
+        >
+          HEY
         </div>
-
-        <!-- play ground -->
-        <div id="playground" class="my-5 xl:mt-20">
-            <div class="py-8">
-                <div class="flex justify-center cap1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-10xl">
-                    <span class="font-thin" id="playG">PLAY</span>
-                    <img src="public/img/cube.svg" class="hover:invert duration-500 hover:cursor-pointer w-4 md:w-10 xl:w-16 animate-spin" alt=""> 
-                    <span class="italic font-bold pe-2" id="pGround">GROUND</span>
-                </div>
-                <div class="flex justify-between text-sm font-mono px-5">
-                    <div class="">OTHER PROJECTS</div>
-                    <div class="">EXPERIMENTS</div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 p-5 gap-3 md:grid-cols-2 xl:grid-cols-3">
-                <div class="bg-white/5 rounded-3xl border border-white/10 xl:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500">
-                    <div class="bg-pink-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center">
-                        <div class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5">
-                            <div class="text-xl brightness-200 text-gray-50">
-                                <div class="text-sm">Kap.ai</div>
-                            </div>
-                        </div>
-                        <img src="public/img/possessed-photography-jIBMSMs4_kA-unsplash-min.jpg" alt="" class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg">
-                    </div>
-                </div>
-                <div class="bg-white/5 rounded-3xl border border-white/10 xl:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500">
-                    <div class="bg-purple-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center">
-                        <div class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5">
-                            <div class="text-xl brightness-200 text-gray-50">
-                                <div class="text-sm">Event Ticketing App</div>
-                            </div>
-                        </div>
-                        <img src="public/img/austin-distel-tLZhFRLj6nY-unsplash-min.jpg" alt="" class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg">
-                    </div>
-                </div>
-                <div class="bg-white/5 rounded-3xl border border-white/10 xl:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500">
-                    <div class="bg-indigo-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center">
-                        <div class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5">
-                            <div class="text-xl brightness-200 text-gray-50">
-                                <div class="text-sm">Mobile Baking Suite</div>
-                            </div>
-                        </div>
-                        <img src="public/img/domenico-loia-EhTcC9sYXsw-unsplash-min.jpg" alt="" class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg">
-                    </div>
-                </div>
-                <div class="bg-white/5 rounded-3xl border border-white/10 xl:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500">
-                    <div class="bg-green-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center">
-                        <div class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5">
-                            <div class="text-xl brightness-200 text-gray-50">
-                                <div class="text-sm">Educational Platform</div>
-                            </div>
-                        </div>
-                        <img src="public/img/jakob-owens-WUmb_eBrpjs-unsplash-min.jpg" alt="" class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg">
-                    </div>
-                </div>
-                <div class="bg-white/5 rounded-3xl border border-white/10 xl:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500">
-                    <div class="bg-red-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center">
-                        <div class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5">
-                            <div class="text-xl brightness-200 text-gray-50">
-                                <div class="text-sm">Online Shopping Site</div>
-                            </div>
-                        </div>
-                        <img src="public/img/dribble-min.jpg" alt="" class="w-full h-full hover:scale-110 duration-700 object-cover    rounded-lg shadow-lg">
-                    </div>
-                </div>
-                <div class="bg-white/5 rounded-3xl border border-white/10 xl:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500">
-                    <div class="bg-yellow-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center">
-                        <div class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5">
-                            <div class="text-xl brightness-200 text-gray-50">
-                                <div class="text-sm">Food and Delivary</div>
-                            </div>
-                        </div>
-                        <img src="public/img/alex-kotliarskyi-ourQHRTE2IM-unsplash-min.jpg" alt="" class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg">
-                    </div>
-                </div>
-            </div>
+        <div
+          class="cap1 inline-block md:hidden cursor-context-menu md:text-gray-50 w-64 ps-5 text-8xl xl:text-10xl"
+        >
+          IAM
         </div>
+        <div
+          class="cap1 hidden md:inline-block cursor-context-menu md:text-gray-50 mx-auto text-8xl xl:text-10xl hiThere"
+        >
+          HI THERE
+        </div>
+        <div
+          class="cursor-context-menu inline-block md:flex md:items-center md:justify-center md:w-full ps-5 relative w-52"
+        >
+          <div
+            class="cap1 hidden md:block text-9xl pe-4 md:text-gray-50 xl:text-10xl Iam"
+          >
+            I AM
+          </div>
+          <div class="cap1 relative md:pe-8 flex items-end kCube pb-3">
+            <img
+              src="public/img/Kstroke.svg"
+              alt=""
+              class="w-36 h-36 p-2 xl:h-60 xl:p-2 xl:ms-5 md:p-4 brightness-75 md:brightness-100"
+            />
+            <span
+              class="hidden xl:inline-block xl:text-7xl pb-12 text-gray-50 font-bold font-mono ps-1"
+              >cube</span
+            >
+            <img
+              src="public/img/cube.svg"
+              alt=""
+              class="w-14 absolute right-0 top-1/3 animate-spin z-20 cursor-pointer hover:invert hover:w-16 duration-500"
+            />
+          </div>
+        </div>
+      </div>
 
-        <!-- about me -->
-        <div id="about" class="my-5 xl:mt-20">
-            <div class="py-8">
-                <div class="flex justify-center cap1 text-7xl md:text-8xl xl:text-10xl">
-                    <span class="font-thin" id="aboutM">ABOUT</span>
-                    <img src="public/img/cube.svg" class="hover:invert duration-500 hover:cursor-pointer w-4 md:w-10 xl:w-16 animate-spin" alt=""> 
-                    <span class="italic font-bold pe-2" id="Ame">ME</span>
-                </div>
-                <div class="flex justify-between text-sm font-mono px-5">
-                    <div class="">BASED IN MANDALAY</div>
-                    <div class="">DETAIL-ORIENTED</div>
-                    <div class="">CURIOUS</div>
-                </div>
+      <!-- intro -->
+      <div id="intro">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="col-span-1 lg:p-8">
+            <div class="text-4xl xl:text-5xl text-white/40 p-5">
+              Junior
+              <span class="text-white">Frontend Developer </span>dedicated to
+              the <span class="text-white">craft</span> of creating
+              <span class="text-white">0➝1</span> digital experiences till the
+              last <span class="text-white">detail</span>.
             </div>
-            <!-- small device -->
-            <div class="grid grid-cols-1 gap-5 p-5 md:hidden">
-                <!-- <div class="hidden col-span-2 xl:flex items-center justify-center">
+            <div class="grid grid-cols-2 py-4">
+              <div class="p-5 text-white/30 text-sm">
+                I've done multiple frontend projects with
+                <span class="text-white">High Quality Contents</span>.
+              </div>
+              <div class="p-5 text-white/30 text-sm">
+                Currently, learning at
+                <span class="text-white">MIBA university</span>.
+              </div>
+            </div>
+          </div>
+          <div class="hidden col-span-1 lg:flex items-center justify-center">
+            <img
+              src="public/img/Radilson Gomes - Portfolio 2023 - Google Chrome 4_19_2024 1_33_10 PM.png"
+              alt=""
+              class="cap2 h-102 object-cover saturate-0 hover:saturate-100 duration-500 hover:scale-105"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- select work -->
+      <div id="work" class="my-5 xl:mt-20">
+        <div class="py-8">
+          <div
+            class="flex justify-center cap1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-10xl"
+          >
+            <span class="font-thin" id="selectW">SELECT</span>
+            <img
+              src="public/img/cube.svg"
+              class="hover:invert duration-500 hover:cursor-pointer w-4 md:w-10 xl:w-16 animate-spin"
+              alt=""
+            />
+            <span class="italic font-bold pe-2" id="sWork">WORK</span>
+          </div>
+          <div class="flex justify-between text-sm font-mono px-5">
+            <div class="">CASE STUDIES</div>
+            <div class="">DESIGN PROCESS</div>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row p-5 gap-3">
+          <div
+            class="p-2 lg:saturate-0 hover:scale-90 lg:hover:scale-100 hover:saturate-100 duration-500 bg-white/5 rounded-3xl border border-white/10 w-full lg:w-1/3 lg:hover:w-5/12 lg:brightness-50 hover:brightness-100"
+          >
+            <div
+              class="p-5 rounded-2xl text-lg font-semibold text-gray-200 bg-green-600 flex justify-between"
+            >
+              <div class="">Next.js</div>
+              <div class="font-mono">2023</div>
+            </div>
+            <div
+              class="bg-green-600 brightness-75 relative h-96 mt-3 rounded-2xl flex items-center justify-center"
+            >
+              <div
+                class="cap2 absolute w-full h-full duration-300 z-10 flex flex-col justify-between p-5"
+              >
+                <img
+                  src="public/img/bootstrap-logo.png"
+                  alt=""
+                  class="w-14 opacity-60 saturate-0 brightness-200"
+                />
+                <div class="text-xl xl:text-2xl brightness-200 text-gray-50">
+                  <div class="">CSS Framework</div>
+                  <div class="italic">Virtual Tour</div>
+                </div>
+              </div>
+              <img
+                src="public/img/Macbook_Air_Mockup_4b.png"
+                alt=""
+                class="xl:h-2/ rounded-2xl object-contain"
+              />
+            </div>
+          </div>
+          <div
+            class="p-2 lg:saturate-0 hover:scale-90 lg:hover:scale-100 hover:saturate-100 duration-500 bg-white/5 rounded-3xl border border-white/10 w-full lg:w-1/3 lg:hover:w-5/12 lg:brightness-50 hover:brightness-100"
+          >
+            <div
+              class="p-5 rounded-2xl text-lg font-semibold text-gray-200 bg-indigo-600 flex justify-between"
+            >
+              <div class="">Tailwind</div>
+              <div class="font-mono">2024</div>
+            </div>
+            <div
+              class="bg-indigo-600 brightness-75 relative h-96 mt-3 rounded-2xl flex items-center justify-center"
+            >
+              <div
+                class="cap2 absolute w-full h-full duration-300 z-10 flex flex-col justify-between p-5"
+              >
+                <img
+                  src="public/img/tailwind-logo.png"
+                  alt=""
+                  class="w-12 opacity-60 saturate-0 brightness-200 p-1 object-contain"
+                />
+                <div class="text-xl xl:text-2xl brightness-200 text-gray-50">
+                  <div class="">CSS Framework</div>
+                  <div class="italic">Platform for Developers</div>
+                </div>
+              </div>
+              <img
+                src="public/img/preview-min.png"
+                alt=""
+                class="h-2/5 xl:h-2/3 rounded-lg"
+              />
+            </div>
+          </div>
+          <div
+            class="p-2 lg:saturate-0 hover:scale-90 lg:hover:scale-100 hover:saturate-100 duration-500 bg-white/5 rounded-3xl border border-white/10 w-full lg:w-1/3 lg:hover:w-5/12 lg:brightness-50 hover:brightness-100"
+          >
+            <div
+              class="p-5 rounded-2xl text-lg font-semibold text-gray-200 bg-sky-600 flex justify-between"
+            >
+              <div class="">React</div>
+              <div class="font-mono">2024</div>
+            </div>
+            <div
+              class="bg-sky-600 brightness-75 relative h-96 mt-3 rounded-2xl flex items-center justify-center xl:p-5"
+            >
+              <div
+                class="cap2 absolute w-full h-full duration-300 z-10 flex flex-col justify-between p-5"
+              >
+                <img
+                  src="public/img/react-logo.png"
+                  alt=""
+                  class="w-12 opacity-60 saturate-0 brightness-200 p-1"
+                />
+                <div class="text-xl xl:text-2xl brightness-200 text-gray-50">
+                  <div class="">Javascript Library</div>
+                  <div class="italic">For Local Retailers</div>
+                </div>
+              </div>
+              <img
+                src="public/img/Trending Tailwind templates _ Tailwind Awesome - Google Chrome 4_18_2024 5_19_34 PM-min.png"
+                alt=""
+                class="h-2/5 xl:h-2/3 rounded-lg object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- play ground -->
+      <div id="playground" class="my-5 xl:mt-20">
+        <div class="py-8">
+          <div
+            class="flex justify-center cap1 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-10xl"
+          >
+            <span class="font-thin" id="playG">PLAY</span>
+            <img
+              src="public/img/cube.svg"
+              class="hover:invert duration-500 hover:cursor-pointer w-4 md:w-10 xl:w-16 animate-spin"
+              alt=""
+            />
+            <span class="italic font-bold pe-2" id="pGround">GROUND</span>
+          </div>
+          <div class="flex justify-between text-sm font-mono px-5">
+            <div class="">OTHER PROJECTS</div>
+            <div class="">EXPERIMENTS</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 p-5 gap-3 md:grid-cols-2 lg:grid-cols-3">
+          <a
+            href="https://morph-digital-ij1w0tbl4-danials-projects-222e55aa.vercel.app"
+            class="bg-white/5 rounded-3xl border border-white/10 lg:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500"
+          >
+            <div
+              class="bg-yellow-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center"
+            >
+              <div
+                class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5"
+              >
+                <div class="text-xl brightness-200 text-gray-50">
+                  <div class="text-sm">Morph</div>
+                </div>
+              </div>
+              <img
+                src="public/img/morph.png"
+                alt=""
+                class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </a>
+          <a
+            href="https://gymnast.onrender.com/"
+            class="bg-white/5 rounded-3xl border border-white/10 lg:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500"
+          >
+            <div
+              class="bg-indigo-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center"
+            >
+              <div
+                class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5"
+              >
+                <div class="text-xl brightness-200 text-gray-50">
+                  <div class="text-sm">Gymnast</div>
+                </div>
+              </div>
+              <img
+                src="public/img/gymnast.png"
+                alt=""
+                class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </a>
+          <a
+            href="https://leiga.onrender.com/"
+            class="bg-white/5 rounded-3xl border border-white/10 lg:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500"
+          >
+            <div
+              class="bg-purple-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center"
+            >
+              <div
+                class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5"
+              >
+                <div class="text-xl brightness-200 text-gray-50">
+                  <div class="text-sm">Leiga</div>
+                </div>
+              </div>
+              <img
+                src="public/img/leiga.png"
+                alt=""
+                class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </a>
+          <a
+            href="https://acme-online-shop.vercel.app/"
+            class="bg-white/5 rounded-3xl border border-white/10 lg:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500"
+          >
+            <div
+              class="bg-green-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center"
+            >
+              <div
+                class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5"
+              >
+                <div class="text-xl brightness-200 text-gray-50">
+                  <div class="text-sm">Acme</div>
+                </div>
+              </div>
+              <img
+                src="public/img/acme.png"
+                alt=""
+                class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </a>
+          <a
+            href="https://pireal.onrender.com/"
+            class="bg-white/5 rounded-3xl border border-white/10 lg:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500"
+          >
+            <div
+              class="bg-red-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center"
+            >
+              <div
+                class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5"
+              >
+                <div class="text-xl brightness-200 text-gray-50">
+                  <div class="text-sm">Pireal</div>
+                </div>
+              </div>
+              <img
+                src="public/img/pireal.png"
+                alt=""
+                class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </a>
+          <a
+            href="https://santonio.vercel.app/"
+            class="bg-white/5 rounded-3xl border border-white/10 lg:saturate-0 hover:saturate-100 brightness-50 hover:brightness-100 duration-500"
+          >
+            <div
+              class="bg-pink-600 brightness-75 relative h-72 rounded-2xl flex items-center justify-center"
+            >
+              <div
+                class="absolute left-0 bottom-0 z-10 flex flex-col justify-end p-5"
+              >
+                <div class="text-xl brightness-200 text-gray-50">
+                  <div class="text-sm">Portfolio</div>
+                </div>
+              </div>
+              <img
+                src="public/img/orange.png"
+                alt=""
+                class="w-full h-full hover:scale-110 duration-700 object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- about me -->
+      <div id="about" class="my-5 xl:mt-20">
+        <div class="py-8">
+          <div
+            class="flex justify-center cap1 text-7xl md:text-8xl xl:text-10xl"
+          >
+            <span class="font-thin" id="aboutM">ABOUT</span>
+            <img
+              src="public/img/cube.svg"
+              class="hover:invert duration-500 hover:cursor-pointer w-4 md:w-10 xl:w-16 animate-spin"
+              alt=""
+            />
+            <span class="italic font-bold pe-2" id="Ame">ME</span>
+          </div>
+          <div class="flex justify-between text-sm font-mono px-5">
+            <div class="">BASED IN MANDALAY</div>
+            <div class="">DETAIL-ORIENTED</div>
+            <div class="">CURIOUS</div>
+          </div>
+        </div>
+        <!-- small device -->
+        <div class="grid grid-cols-1 gap-5 p-5 md:hidden">
+          <!-- <div class="hidden col-span-2 xl:flex items-center justify-center">
                     <img src="public/img/Radilson Gomes - Portfolio 2023 - Google Chrome 4_19_2024 1_33_10 PM.png" alt="" class="cap2 h-full saturate-0 hover:saturate-100 duration-500 hover:scale-105">
                 </div>                 -->
-                <!-- <div class="col-span-1 p-5"> -->
-                    <div class="p-6 pb-0 bg-white/5 rounded-2xl text-2xl border border-white/10">
-                        <div class="">
-                            Frontend Developer with <br>2 years of experience, focused on creating functional and user-centered digital products with visually stunning designs.
-                        </div>
-                        <div class="mx-auto flex justify-between py-4 pe-2">
-                            <div class="flex gap-2">
-                                <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/20">
-                                    <img src="public/img/envelope-regular.svg" alt="" class="w-3">
-                                </a>
-                                <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/20">
-                                    <img src="public/img/linkedin.svg" alt="" class="w-3">
-                                </a>
-                                <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/20">
-                                    <img src="public/img/envelope-regular.svg" alt="" class="w-3">
-                                </a>
-                                <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/20">
-                                    <img src="public/img/twitter.svg" alt="" class="w-3">
-                                </a>
-                            </div>
-                            <a href="public/resume.pdf" download class="text-xs font-semibold px-3 py-1 flex gap-2 rounded-full backdrop-blur-md border border-white/10 hover:border-red-500 hover:shadow-md hover:shadow-red-500/40 hover:bg-black/20 bg-white/20">
-                                <img src="public/img/download-icon.svg" alt="" class="h-4">
-                                Resume
-                            </a>
-                        </div>
-                    </div>
-                    <div class="relative bg-white/5 rounded-2xl border border-white/10">
-                        <img src="public/img/image.png" alt="" class="w-full h-96 object-cover brightness-75">
-                        <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-end text-sm">
-                            <div class="p-3">
-                                <div class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full">Hola! 👋</div> <br>
-                                <div class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full">My name is Kaung Khant Kyaw.</div> <br>
-                                <div class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full">But you can call me Kcube!</div> <br>
-                                <div class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full">Grab my email and get in touch 🤞</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 relative bg-white/5 rounded-2xl border border-white/10">
-                        <div class="uppercase font-mono font-semibold text-lg mb-2">Biography</div>
-                        <!-- <div class="text-sm">
-                            <div class="font-semibold text-white/60 font-mono">2020 - 2021</div>
-                            <div class="font-semibold text-gray-50">After High School</div>
-                            <ul class="text-white/60 text-xs">
-                                <li class="">March 2020: Started programming journey just after high school</li>
-                                <li class="">Explored Edx courses via Wikipedia</li>
-                                <li class="">Delved into programming concepts, MIT scratch games, C language</li>
-                                <li class="">Mastered C++, gained insights</li>
-                            </ul>
-                        </div> -->
-                        <div class="grid grid-cols-5">
-                            <div class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon">Name</div>
-                            <div class="col-span-3 py-1 text-sm">Kaung Khant Kyaw</div>
-                            <div class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon">Nickname</div>
-                            <div class="col-span-3 py-1 text-sm">Danial, K<sup>3</sup></div>
-                            <div class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon">Age</div>
-                            <div class="col-span-3 py-1 text-sm">20</div>
-                            <div class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon">City</div>
-                            <div class="col-span-3 py-1 text-sm">Mandalay, Myanmar</div>
-                        </div>
-                    </div>
-                    <div class="p-6 relative bg-white/5 rounded-2xl border border-white/10">
-                        <div class="uppercase font-mono font-semibold text-lg mb-2">Experience</div>
-                        <!-- <div class="text-sm">
-                            <div class="font-semibold text-white/60 font-mono">2020 - 2021</div>
-                            <div class="font-semibold text-gray-50">After High School</div>
-                            <ul class="text-white/60 text-xs">
-                                <li class="">March 2020: Started programming journey just after high school</li>
-                                <li class="">Explored Edx courses via Wikipedia</li>
-                                <li class="">Delved into programming concepts, MIT scratch games, C language</li>
-                                <li class="">Mastered C++, gained insights</li>
-                            </ul>
-                        </div> -->
-                        <div class="grid grid-cols-5">
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2020-2021</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Started programming journey</div>
-                                <div class="text-gray-500">- Learned C, C++, MIT scratch</div>
-                            </div>
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2021-2022</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Got scholarship twice from Coding-Night School</div>
-                                <div class="text-gray-500">- Learned Python : basic to intermediate</div>
-                            </div>
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2022-2023</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Entered Web Development Field</div>
-                                <div class="text-gray-500">- Learned HTML, CSS</div>
-                            </div>
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2023-2024</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Joined MIBA university</div>
-                                <div class="text-gray-500">- Learned Frontend Development</div>
-                            </div>
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2024 - Now</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Previously claimed a scholarship from CodeMal Academy</div>
-                                <div class="text-gray-500">- Experted in HTML, CSS, Javascript, Bootstrap, Tailwind, PHP, MySQL, Figma</div>
-                                <div class="text-gray-500">- Learning NodeJS, React, Jquery, Laravel</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl brightness-75 hover:brightness-100 duration-300 border border-white/10">
-                        <img src="public/img/photo_1_2024-04-26_18-58-30.jpg" alt="">
-                    </div>
-                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                        <div class="font-mono font-semibold pb-2 text-lg">TOOL STACK</div>
-                        <div class="grid grid-cols-6 sm:grid-cols-10 gap-2 py-2">
-                            <img src="public/img/htmlLogo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-11 h-11 bg-orange-950 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/cssLogo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-11 h-11 bg-blue-950 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/jsLogo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-yellow-500 hover:shadow-yellow-500 hover:brightness-125 duration-300 w-11 h-11 bg-yellow-950 border p-2 border-gray-700 rounded-xl">
-                            <img src="public/img/bootstrap-logo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 w-11 h-11 bg-purple-950 py-1 border border-gray-700 rounded-xl">
-                            <img src="public/img/tailwind-logo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-teal-500 hover:shadow-teal-500 hover:brightness-125 duration-300 w-11 h-11 bg-cyan-950 px-2 py-3 border border-gray-700 rounded-xl">
-                            <img src="public/img/react-logo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-cyan-500 hover:shadow-cyan-500 hover:brightness-125 duration-300 w-11 h-11 bg-cyan-950 px-1 py-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/phpIcon].png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 w-11 h-11 bg-purple-950 py-3 px-1 border border-gray-700 rounded-xl">
-                            <img src="public/img/laravel-icon.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-11 h-11 bg-red-600/10 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/mysql-logo.svg" alt="" class="grid-cols-1 hover:shadow-sm hover:border-orange-500 hover:shadow-orange-500 hover:brightness-105 duration-300 w-11 h-11 bg-orange-50 brightness-90 border border-gray-700 rounded-xl">
-                            <img src="public/img/pythonLogo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-yellow-500 hover:shadow-yellow-500 hover:brightness-125 duration-300 w-11 h-11 bg-cyan-50 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/C++Icon.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-11 h-11 bg-indigo-950 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/figmaIcon.webp" alt="" class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-11 h-11 border border-gray-700 rounded-xl">
-                            <img src="public/img/gptIcon.webp" alt="" class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-100 brightness-90 duration-300 w-11 h-11 border border-gray-700 rounded-xl">
-                            <img src="public/img/spotifyIcon.webp" alt="" class="grid-cols-1 hover:shadow-sm hover:border-green-500 hover:shadow-green-500 hover:brightness-125 duration-300 w-11 h-11 border border-gray-700 rounded-xl">
-                        </div>
-                    </div>
-                <!-- </div> -->
+          <!-- <div class="col-span-1 p-5"> -->
+          <div
+            class="p-6 pb-0 bg-white/5 rounded-2xl text-2xl border border-white/10"
+          >
+            <div class="">
+              Frontend Developer with <br />2 years of experience, focused on
+              creating functional and user-centered digital products with
+              visually stunning designs.
             </div>
-            <!-- md device -->
-            <div class="grid-cols-3 gap-5 p-5 hidden md:grid">
-                <!-- <div class="hidden col-span-2 xl:flex items-center justify-center">
+            <div class="mx-auto flex justify-between py-4 pe-2">
+              <div class="flex gap-2">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100087994523929&mibextid=LQQJ4d"
+                  class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/20"
+                >
+                  <img src="public/img/facebookIcon.svg" alt="" class="w-3" />
+                </a>
+                <a
+                  href="http://linkedin.com/in/kaung-khant-kyaw-688141212"
+                  class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/20"
+                >
+                  <img src="public/img/linkedin.svg" alt="" class="w-3" />
+                </a>
+                <a
+                  href="kaungkhantkyawdk@gmail.com"
+                  class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/20"
+                >
+                  <img
+                    src="public/img/envelope-regular.svg"
+                    alt=""
+                    class="w-3"
+                  />
+                </a>
+                <a
+                  href="https://t.me/DanialK007"
+                  class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/20"
+                >
+                  <img src="public/img/telegram.png" alt="" class="w-3" />
+                </a>
+              </div>
+              <a
+                href="public/kkk-resume.pdf"
+                download
+                class="text-xs font-semibold px-3 py-1 flex items-center gap-2 rounded-full backdrop-blur-md border border-white/10 hover:border-red-500 hover:shadow-md hover:shadow-red-500/40 hover:bg-black/20 bg-white/20"
+              >
+                <img src="public/img/download-icon.svg" alt="" class="h-4" />
+                Resume
+              </a>
+            </div>
+          </div>
+          <div class="relative bg-white/5 rounded-2xl border border-white/10">
+            <img
+              src="public/img/profile.jpeg"
+              alt=""
+              class="w-full object-cover brightness-50 saturate-0"
+            />
+            <div
+              class="absolute top-0 left-0 w-full h-full flex flex-col justify-end text-sm"
+            >
+              <div class="p-3">
+                <div
+                  class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full"
+                >
+                  Hola! 👋
+                </div>
+                <br />
+                <div
+                  class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full"
+                >
+                  My name is Kaung Khant Kyaw.
+                </div>
+                <br />
+                <div
+                  class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full"
+                >
+                  But you can call me Kcube!
+                </div>
+                <br />
+                <div
+                  class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full"
+                >
+                  Grab my email and get in touch 🤞
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="p-6 relative bg-white/5 rounded-2xl border border-white/10"
+          >
+            <div class="uppercase font-mono font-semibold text-lg mb-2">
+              Biography
+            </div>
+            <!-- <div class="text-sm">
+                            <div class="font-semibold text-white/60 font-mono">2020 - 2021</div>
+                            <div class="font-semibold text-gray-50">After High School</div>
+                            <ul class="text-white/60 text-xs">
+                                <li class="">March 2020: Started programming journey just after high school</li>
+                                <li class="">Explored Edx courses via Wikipedia</li>
+                                <li class="">Delved into programming concepts, MIT scratch games, C language</li>
+                                <li class="">Mastered C++, gained insights</li>
+                            </ul>
+                        </div> -->
+            <div class="grid grid-cols-5">
+              <div
+                class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon"
+              >
+                Name
+              </div>
+              <div class="col-span-3 py-1 text-sm">Kaung Khant Kyaw</div>
+              <div
+                class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon"
+              >
+                Nickname
+              </div>
+              <div class="col-span-3 py-1 text-sm">Danial, K<sup>3</sup></div>
+              <div
+                class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon"
+              >
+                Age
+              </div>
+              <div class="col-span-3 py-1 text-sm">20</div>
+              <div
+                class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon"
+              >
+                City
+              </div>
+              <div class="col-span-3 py-1 text-sm">Mandalay, Myanmar</div>
+            </div>
+          </div>
+          <div
+            class="p-6 relative bg-white/5 rounded-2xl border border-white/10"
+          >
+            <div class="uppercase font-mono font-semibold text-lg mb-2">
+              Experience
+            </div>
+            <!-- <div class="text-sm">
+                            <div class="font-semibold text-white/60 font-mono">2020 - 2021</div>
+                            <div class="font-semibold text-gray-50">After High School</div>
+                            <ul class="text-white/60 text-xs">
+                                <li class="">March 2020: Started programming journey just after high school</li>
+                                <li class="">Explored Edx courses via Wikipedia</li>
+                                <li class="">Delved into programming concepts, MIT scratch games, C language</li>
+                                <li class="">Mastered C++, gained insights</li>
+                            </ul>
+                        </div> -->
+            <div class="grid grid-cols-5">
+              <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                2020-2021
+              </div>
+              <div class="col-span-3 py-2 text-sm">
+                <div class="font-semibold">Started programming journey</div>
+                <div class="text-gray-500">- Learned C, C++, MIT scratch</div>
+              </div>
+              <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                2021-2022
+              </div>
+              <div class="col-span-3 py-2 text-sm">
+                <div class="font-semibold">
+                  Got scholarship twice from Coding-Night School
+                </div>
+                <div class="text-gray-500">
+                  - Learned Python : basic to intermediate
+                </div>
+              </div>
+              <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                2022-2023
+              </div>
+              <div class="col-span-3 py-2 text-sm">
+                <div class="font-semibold">Entered Web Development Field</div>
+                <div class="text-gray-500">- Learned HTML, CSS</div>
+              </div>
+              <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                2023-2024
+              </div>
+              <div class="col-span-3 py-2 text-sm">
+                <div class="font-semibold">Joined MIBA university</div>
+                <div class="text-gray-500">- Learned Frontend Development</div>
+              </div>
+              <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                2024 - Now
+              </div>
+              <div class="col-span-3 py-2 text-sm">
+                <div class="font-semibold">
+                  Previously claimed a scholarship from CodeMal Academy
+                </div>
+                <div class="text-gray-500">
+                  - Experted in HTML, CSS, Javascript, Bootstrap, Tailwind, PHP,
+                  MySQL, Figma
+                </div>
+                <div class="text-gray-500">
+                  - Learning NodeJS, React, Jquery, Laravel
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rounded-2xl brightness-75 hover:brightness-100 duration-300 border border-white/10"
+          >
+            <img src="public/img/photo_1_2024-04-26_18-58-30.jpg" alt="" />
+          </div>
+          <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+            <div class="font-mono font-semibold pb-2 text-lg">TOOL STACK</div>
+            <div class="grid grid-cols-9 sm:grid-cols-12 gap-2 py-2">
+              <img
+                src="public/img/htmlLogo.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-orange-950 p-2 border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/cssLogo.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-blue-950 px-2 py-[0.35rem] border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/jsLogo.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-yellow-500 hover:shadow-yellow-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-yellow-950 border p-2 border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/react-logo.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-cyan-500 hover:shadow-cyan-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-cyan-950 py-2 px-[0.4rem] border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/nextjs.svg"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm bg-slate-200 hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 p-1 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/tailwind-logo.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-teal-500 hover:shadow-teal-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-cyan-950 px-1 py-[0.6rem] border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/bootstrap-logo.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-purple-950 py-1 px-[0.2rem] border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/phpIcon].png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-purple-950 py-3 px-1 border border-gray-700 rounded-xl"
+              />
+              <!-- <img
+                  src="public/img/laravel-icon.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-red-600/10 p-2 border border-gray-700 rounded-xl"
+                /> -->
+              <img
+                src="public/img/mysql.png"
+                alt=""
+                class="grid-cols-1 bg-white hover:shadow-sm hover:border-orange-500 hover:shadow-orange-500 hover:brightness-105 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/pythonLogo.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-yellow-500 hover:shadow-yellow-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-cyan-50 p-2 border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/C++Icon.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-indigo-950 py-[0.4rem] px-2 border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/figmaIcon.webp"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/gptIcon.webp"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-white hover:shadow-white hover:brightness-100 brightness-90 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/express.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm p-2 bg-slate-200 hover:border-indigo-500 hover:shadow-indigo-500 hover:brightness-100 brightness-90 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/framer-motion.svg"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm bg-slate-200 p-2 hover:border-purple-500 hover:shadow-purple-500 hover:brightness-100 brightness-90 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/lenis.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm bg-slate-200 p-2 hover:border-pink-500 hover:shadow-pink-500 hover:brightness-100 brightness-90 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/gsap.svg"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm p-[0.3rem] bg-slate-200 hover:border-green-500 hover:shadow-green-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/mongo.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm px-[0.7rem] py-1 bg-slate-200 hover:border-green-500 hover:shadow-green-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/git.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-orange-950 p-2 border border-gray-700 rounded-xl"
+              />
+              <img
+                src="public/img/github.png"
+                alt=""
+                class="grid-cols-1 hover:shadow-sm bg-slate-200 hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 p-1 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+              />
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+        <!-- md device -->
+        <div class="grid-cols-3 gap-5 p-5 hidden md:grid">
+          <!-- <div class="hidden col-span-2 xl:flex items-center justify-center">
                     <img src="public/img/Radilson Gomes - Portfolio 2023 - Google Chrome 4_19_2024 1_33_10 PM.png" alt="" class="cap2 h-full saturate-0 hover:saturate-100 duration-500 hover:scale-105">
                 </div>                 -->
-                <!-- <div class="col-span-1 p-5"> -->
-                <div class="col-span-1 flex flex-col gap-5">
-                    <div class="p-6 pb-0 bg-white/5 rounded-2xl text-2xl border border-white/10">
-                        <div class="">
-                            Frontend Developer with <br>2 years of experience, focused on creating functional and user-centered digital products with visually stunning designs.
-                        </div>
-                        <div class="mx-auto flex justify-between py-4 pe-2">
-                            <div class="flex gap-2">
-                                <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:border-blue-500 hover:shadow hover:shadow-blue-500/40 hover:bg-black/20 bg-white/20 duration-300">
-                                    <img src="public/img/facebookIcon.svg" alt="" class="w-3">
-                                </a>
-                                <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:border-green-500 hover:shadow hover:shadow-green-500/40 hover:bg-black/20 bg-white/20 duration-300">
-                                    <img src="public/img/envelope-regular.svg" alt="" class="w-3">
-                                </a>
-                                <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:border-indigo-500 hover:shadow hover:shadow-indigo-500/40 hover:bg-black/20 bg-white/20 duration-300">
-                                    <img src="public/img/linkedin.svg" alt="" class="w-3">
-                                </a>
-                                <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:border-blue-500 hover:shadow hover:shadow-blue-500/40 hover:bg-black/20 bg-white/20 duration-300">
-                                    <img src="public/img/twitter.svg" alt="" class="w-3">
-                                </a>
-                            </div>
-                            <a href="public/resume.pdf" download class="text-xs font-semibold px-3 py-1 flex gap-2 rounded-full backdrop-blur-md border border-white/10 hover:border-red-500 hover:shadow-md hover:shadow-red-500/40 hover:bg-black/20 bg-white/20 duration-300">
-                                <img src="public/img/download-icon.svg" alt="" class="h-4">
-                                Resume
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6 relative bg-white/5 rounded-2xl border border-white/10">
-                        <div class="uppercase font-mono font-semibold text-lg mb-2">My Background</div>
-                        <div class="text-sm text-gray-400">
-                            <div class="py-2">
-                                Hey there! I'm Kaung Khant Kyaw, a passionate individual from <span class="underline text-gray-50 hover:cursor-pointer hover:text-red-500">Mandalay</span> on a journey through the fascinating
-world of programming and web development.
-                            </div>
-                            <div class="py-2">
-                                In March 2020, after high school, I began programming with my mom's help, who bought me a 2.5 lakh laptop. I started with Edx courses from Wikipedia, diving into programming concepts and MIT scratch game projects. <span class="underline text-gray-50 hover:cursor-pointer hover:text-red-500">I learned C and eventually mastered C++</span>, gaining valuable insights along the way.                            
-                            </div>
-                            <div class="py-2">
-                                In 2021, my commitment to learning <span class="underline text-gray-50 hover:cursor-pointer hover:text-red-500">earned me a scholarship</span> for an online Python Basics Course, further fueling my passion for programming. Subsequently, I received <span class="underline text-gray-50 hover:cursor-pointer hover:text-red-500">another scholarship for a Python Intermediate Course</span>, expanding my skills and determination to excel in programming.
-                            </div>
-                            <div class="py-2">
-                                In 2022, I delved into web development, sparking a passion for creating engaging websites. By 2023, at MIBA University, I honed my CSS skills and mastered frameworks like <span class="underline text-gray-50 hover:cursor-pointer hover:text-red-500">Tailwind</span> and <span class="underline text-gray-50 hover:cursor-pointer hover:text-red-500">Bootstrap</span> . Completing <span class="underline text-gray-50 hover:cursor-pointer hover:text-red-500">PHP</span> projects with <span class="underline text-gray-50 hover:cursor-pointer hover:text-red-500">MySQL</span> integration, I showcased my ability to build dynamic web apps. Utilizing free hosting, I independently developed and deployed numerous websites, showcasing proficiency across the entire web development process. Now, <span class="underline text-gray-50 hover:cursor-pointer hover:text-red-500">I'm ready</span> to tackle any challenge with confidence.
-                            </div>
-                        </div>
-                    </div>
+          <!-- <div class="col-span-1 p-5"> -->
+          <div class="col-span-1 flex flex-col gap-5">
+            <div
+              class="p-6 pb-0 bg-white/5 rounded-2xl text-2xl border border-white/10"
+            >
+              <div class="">
+                Frontend Developer with <br />2 years of experience, focused on
+                creating functional and user-centered digital products with
+                visually stunning designs.
+              </div>
+              <div class="mx-auto flex justify-between py-4 pe-2">
+                <div class="flex gap-2">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100087994523929&mibextid=LQQJ4d"
+                    class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:border-blue-500 hover:shadow hover:shadow-blue-500/40 hover:bg-black/20 bg-white/20 duration-300"
+                  >
+                    <img src="public/img/facebookIcon.svg" alt="" class="w-3" />
+                  </a>
+                  <a
+                    href="kaungkhantkyawdk@gmail.com"
+                    class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:border-green-500 hover:shadow hover:shadow-green-500/40 hover:bg-black/20 bg-white/20 duration-300"
+                  >
+                    <img
+                      src="public/img/envelope-regular.svg"
+                      alt=""
+                      class="w-3"
+                    />
+                  </a>
+                  <a
+                    href="http://linkedin.com/in/kaung-khant-kyaw-688141212"
+                    class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:border-indigo-500 hover:shadow hover:shadow-indigo-500/40 hover:bg-black/20 bg-white/20 duration-300"
+                  >
+                    <img src="public/img/linkedin.svg" alt="" class="w-3" />
+                  </a>
+                  <a
+                    href="https://t.me/DanialK007"
+                    class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:border-blue-500 hover:shadow hover:shadow-blue-500/40 hover:bg-black/20 bg-white/20 duration-300"
+                  >
+                    <img src="public/img/telegram.png" alt="" class="w-3" />
+                  </a>
                 </div>
-                <div class="col-span-1 flex flex-col gap-5">
-                    <div class="relative bg-white/5 rounded-2xl border border-white/10">
-                        <img src="public/img/image.png" alt="" class="w-full object-cover brightness-75">
-                        <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-end text-sm">
-                            <div class="p-3">
-                                <div class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full">Hola! 👋</div> <br>
-                                <div class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full">My name is Kaung Khant Kyaw.</div> <br>
-                                <div class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full">But you can call me Kcube!</div> <br>
-                                <div class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full">Grab my email and get in touch 🤞</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 relative bg-white/5 rounded-2xl border border-white/10">
-                        <div class="uppercase font-mono font-semibold text-lg mb-2">Biography</div>
-                        <div class="grid grid-cols-5">
-                            <div class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon">Name</div>
-                            <div class="col-span-3 py-1 text-sm">Kaung Khant Kyaw</div>
-                            <div class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon">Nickname</div>
-                            <div class="col-span-3 py-1 text-sm">Danial, K<sup>3</sup></div>
-                            <div class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon">Age</div>
-                            <div class="col-span-3 py-1 text-sm">20</div>
-                            <div class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon">City</div>
-                            <div class="col-span-3 py-1 text-sm">Mandalay, Myanmar</div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl brightness-75 hover:brightness-100 duration-300 border border-white/10">
-                        <img src="public/img/photo_1_2024-04-26_18-58-30.jpg" alt="">
-                    </div>
+                <a
+                  href="public/kkk-resume.pdf"
+                  download
+                  class="text-xs font-semibold px-3 py-1 items-center flex gap-2 rounded-full backdrop-blur-md border border-white/10 hover:border-red-500 hover:shadow-md hover:shadow-red-500/40 hover:bg-black/20 bg-white/20 duration-300"
+                >
+                  <img src="public/img/download-icon.svg" alt="" class="h-4" />
+                  Resume
+                </a>
+              </div>
+            </div>
+            <div
+              class="p-6 relative bg-white/5 rounded-2xl border border-white/10"
+            >
+              <div class="uppercase font-mono font-semibold text-lg mb-2">
+                My Background
+              </div>
+              <div class="text-sm text-gray-400">
+                <div class="py-2">
+                  Hey there! I'm Kaung Khant Kyaw, a passionate individual from
+                  <span
+                    class="underline text-gray-50 hover:cursor-pointer hover:text-red-500"
+                    >Mandalay</span
+                  >
+                  on a journey through the fascinating world of programming and
+                  web development.
                 </div>
-                <div class="col-span-1 flex flex-col gap-5">
-                    <div class="p-6 relative bg-white/5 rounded-2xl border border-white/10">
-                        <div class="uppercase font-mono font-semibold text-lg mb-2">Experience</div>
-                        <!-- <div class="text-sm">
+                <div class="py-2">
+                  In March 2020, after high school, I began programming with my
+                  mom's help, who bought me a 2.5 lakh laptop. I started with
+                  Edx courses from Wikipedia, diving into programming concepts
+                  and MIT scratch game projects.
+                  <span
+                    class="underline text-gray-50 hover:cursor-pointer hover:text-red-500"
+                    >I learned C and eventually mastered C++</span
+                  >, gaining valuable insights along the way.
+                </div>
+                <div class="py-2">
+                  In 2021, my commitment to learning
+                  <span
+                    class="underline text-gray-50 hover:cursor-pointer hover:text-red-500"
+                    >earned me a scholarship</span
+                  >
+                  for an online Python Basics Course, further fueling my passion
+                  for programming. Subsequently, I received
+                  <span
+                    class="underline text-gray-50 hover:cursor-pointer hover:text-red-500"
+                    >another scholarship for a Python Intermediate Course</span
+                  >, expanding my skills and determination to excel in
+                  programming.
+                </div>
+                <div class="py-2">
+                  In 2022, I delved into web development, sparking a passion for
+                  creating engaging websites. By 2023, at MIBA University, I
+                  honed my CSS skills and mastered frameworks like
+                  <span
+                    class="underline text-gray-50 hover:cursor-pointer hover:text-red-500"
+                    >Tailwind</span
+                  >
+                  and
+                  <span
+                    class="underline text-gray-50 hover:cursor-pointer hover:text-red-500"
+                    >Bootstrap</span
+                  >
+                  . Completing
+                  <span
+                    class="underline text-gray-50 hover:cursor-pointer hover:text-red-500"
+                    >PHP</span
+                  >
+                  projects with
+                  <span
+                    class="underline text-gray-50 hover:cursor-pointer hover:text-red-500"
+                    >MySQL</span
+                  >
+                  integration, I showcased my ability to build dynamic web apps.
+                  Utilizing free hosting, I independently developed and deployed
+                  numerous websites, showcasing proficiency across the entire
+                  web development process. Now,
+                  <span
+                    class="underline text-gray-50 hover:cursor-pointer hover:text-red-500"
+                    >I'm ready</span
+                  >
+                  to tackle any challenge with confidence.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1 flex flex-col gap-5">
+            <div class="relative bg-white/5 rounded-2xl border border-white/10">
+              <img
+                src="public/img/profile.jpeg"
+                alt=""
+                class="w-full object-cover brightness-50 saturate-0"
+              />
+              <div
+                class="absolute top-0 left-0 w-full h-full flex flex-col justify-end text-sm"
+              >
+                <div class="p-3">
+                  <div
+                    class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full"
+                  >
+                    Hola! 👋
+                  </div>
+                  <br />
+                  <div
+                    class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full"
+                  >
+                    My name is Kaung Khant Kyaw.
+                  </div>
+                  <br />
+                  <div
+                    class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full"
+                  >
+                    But you can call me Kcube!
+                  </div>
+                  <br />
+                  <div
+                    class="bg-white/15 px-2 inline-block rounded-s-full rounded-e-full"
+                  >
+                    Grab my email and get in touch 🤞
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-6 relative bg-white/5 rounded-2xl border border-white/10"
+            >
+              <div class="uppercase font-mono font-semibold text-lg mb-2">
+                Biography
+              </div>
+              <div class="grid grid-cols-5">
+                <div
+                  class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon"
+                >
+                  Name
+                </div>
+                <div class="col-span-3 py-1 text-sm">Kaung Khant Kyaw</div>
+                <div
+                  class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon"
+                >
+                  Nickname
+                </div>
+                <div class="col-span-3 py-1 text-sm">Danial, K<sup>3</sup></div>
+                <div
+                  class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon"
+                >
+                  Age
+                </div>
+                <div class="col-span-3 py-1 text-sm">20</div>
+                <div
+                  class="col-span-2 py-1 text-sm text-white/60 font-semibold font-mon"
+                >
+                  City
+                </div>
+                <div class="col-span-3 py-1 text-sm">Mandalay, Myanmar</div>
+              </div>
+            </div>
+            <div
+              class="rounded-2xl brightness-75 hover:brightness-100 duration-300 border border-white/10"
+            >
+              <img src="public/img/photo_1_2024-04-26_18-58-30.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-span-1 flex flex-col gap-5">
+            <div
+              class="p-6 relative bg-white/5 rounded-2xl border border-white/10"
+            >
+              <div class="uppercase font-mono font-semibold text-lg mb-2">
+                Experience
+              </div>
+              <!-- <div class="text-sm">
                             <div class="font-semibold text-white/60 font-mono">2020 - 2021</div>
                             <div class="font-semibold text-gray-50">After High School</div>
                             <ul class="text-white/60 text-xs">
@@ -481,126 +1049,277 @@ world of programming and web development.
                                 <li class="">Mastered C++, gained insights</li>
                             </ul>
                         </div> -->
-                        <div class="grid grid-cols-5">
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2020-2021</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Started programming journey</div>
-                                <div class="text-gray-500">- Learned C, C++, MIT scratch</div>
-                            </div>
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2021-2022</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Got scholarship twice from Coding-Night School</div>
-                                <div class="text-gray-500">- Learned Python : basic to intermediate</div>
-                            </div>
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2022-2023</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Entered Web Development Field</div>
-                                <div class="text-gray-500">- Learned HTML, CSS</div>
-                            </div>
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2023-2024</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Joined MIBA university</div>
-                                <div class="text-gray-500">- Learned Frontend Development</div>
-                            </div>
-                            <div class="col-span-2 py-2 text-sm text-white/60 font-mono">2024 - Now</div>
-                            <div class="col-span-3 py-2 text-sm">
-                                <div class="font-semibold">Previously claimed a scholarship from CodeMal Academy</div>
-                                <div class="text-gray-500">- Experted in HTML, CSS, Javascript, Bootstrap, Tailwind, PHP, MySQL, Figma</div>
-                                <div class="text-gray-500">- Learning NodeJS, React, Jquery, Laravel</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                        <div class="font-mono font-semibold pb-2 text-lg">TOOL STACK</div>
-                        <div class="grid md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 py-2">
-                            <img src="public/img/htmlLogo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-12 h-12 bg-orange-950 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/cssLogo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-12 h-12 bg-blue-950 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/jsLogo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-yellow-500 hover:shadow-yellow-500 hover:brightness-125 duration-300 w-12 h-12 bg-yellow-950 border p-2 border-gray-700 rounded-xl">
-                            <img src="public/img/bootstrap-logo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 w-12 h-12 bg-purple-950 py-1 border border-gray-700 rounded-xl">
-                            <img src="public/img/tailwind-logo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-teal-500 hover:shadow-teal-500 hover:brightness-125 duration-300 w-12 h-12 bg-cyan-950 px-2 py-4 border border-gray-700 rounded-xl">
-                            <img src="public/img/react-logo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-cyan-500 hover:shadow-cyan-500 hover:brightness-125 duration-300 w-12 h-12 bg-cyan-950 px-1 py-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/phpIcon].png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 w-12 h-12 bg-purple-950 py-3 px-1 border border-gray-700 rounded-xl">
-                            <img src="public/img/laravel-icon.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-12 h-12 bg-red-600/10 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/mysql-logo.svg" alt="" class="grid-cols-1 hover:shadow-sm hover:border-orange-500 hover:shadow-orange-500 hover:brightness-105 duration-300 w-12 h-12 bg-orange-50 brightness-90 border border-gray-700 rounded-xl">
-                            <img src="public/img/pythonLogo.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-yellow-500 hover:shadow-yellow-500 hover:brightness-125 duration-300 w-12 h-12 bg-cyan-50 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/C++Icon.png" alt="" class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-12 h-12 bg-indigo-950 p-2 border border-gray-700 rounded-xl">
-                            <img src="public/img/figmaIcon.webp" alt="" class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-12 h-12 border border-gray-700 rounded-xl">
-                            <img src="public/img/gptIcon.webp" alt="" class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-100 brightness-90 duration-300 w-12 h-12 border border-gray-700 rounded-xl">
-                            <img src="public/img/spotifyIcon.webp" alt="" class="grid-cols-1 hover:shadow-sm hover:border-green-500 hover:shadow-green-500 hover:brightness-125 duration-300 w-12 h-12 border border-gray-700 rounded-xl">
-                        </div>
-                    </div>
+              <div class="grid grid-cols-5">
+                <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                  2020-2021
                 </div>
+                <div class="col-span-3 py-2 text-sm">
+                  <div class="font-semibold">Started programming journey</div>
+                  <div class="text-gray-500">- Learned C, C++, MIT scratch</div>
+                </div>
+                <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                  2021-2022
+                </div>
+                <div class="col-span-3 py-2 text-sm">
+                  <div class="font-semibold">
+                    Got scholarship twice from Coding-Night School
+                  </div>
+                  <div class="text-gray-500">
+                    - Learned Python : basic to intermediate
+                  </div>
+                </div>
+                <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                  2022-2023
+                </div>
+                <div class="col-span-3 py-2 text-sm">
+                  <div class="font-semibold">Entered Web Development Field</div>
+                  <div class="text-gray-500">- Learned HTML, CSS</div>
+                </div>
+                <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                  2023-2024
+                </div>
+                <div class="col-span-3 py-2 text-sm">
+                  <div class="font-semibold">Joined MIBA university</div>
+                  <div class="text-gray-500">
+                    - Learned Frontend Development
+                  </div>
+                </div>
+                <div class="col-span-2 py-2 text-sm text-white/60 font-mono">
+                  2024 - Now
+                </div>
+                <div class="col-span-3 py-2 text-sm">
+                  <div class="font-semibold">
+                    Previously claimed a scholarship from CodeMal Academy
+                  </div>
+                  <div class="text-gray-500">
+                    - Experted in HTML, CSS, Javascript, Bootstrap, Tailwind,
+                    PHP, MySQL, Figma
+                  </div>
+                  <div class="text-gray-500">
+                    - Learning NodeJS, React, Jquery, Laravel
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+              <div class="font-mono font-semibold pb-2 text-lg">TOOL STACK</div>
+              <div
+                class="grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8 gap-2 py-2"
+              >
+                <img
+                  src="public/img/htmlLogo.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-orange-950 p-2 border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/cssLogo.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-blue-950 px-2 py-[0.35rem] border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/jsLogo.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-yellow-500 hover:shadow-yellow-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-yellow-950 border p-2 border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/react-logo.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-cyan-500 hover:shadow-cyan-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-cyan-950 py-2 px-[0.4rem] border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/nextjs.svg"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm bg-slate-200 hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 p-1 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/tailwind-logo.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-teal-500 hover:shadow-teal-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-cyan-950 px-1 py-[0.6rem] border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/bootstrap-logo.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-purple-950 py-1 px-[0.2rem] border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/express.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm p-2 bg-slate-200 hover:border-indigo-500 hover:shadow-indigo-500 hover:brightness-100 brightness-90 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/mongo.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm px-[0.7rem] py-1 bg-slate-200 hover:border-green-500 hover:shadow-green-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/framer-motion.svg"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm bg-slate-200 p-2 hover:border-purple-500 hover:shadow-purple-500 hover:brightness-100 brightness-90 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/gsap.svg"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm p-[0.3rem] bg-slate-200 hover:border-green-500 hover:shadow-green-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/lenis.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm bg-slate-200 p-2 hover:border-pink-500 hover:shadow-pink-500 hover:brightness-100 brightness-90 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/phpIcon].png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-purple-950 py-3 px-1 border border-gray-700 rounded-xl"
+                />
+                <!-- <img
+                  src="public/img/laravel-icon.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-red-600/10 p-2 border border-gray-700 rounded-xl"
+                /> -->
+                <img
+                  src="public/img/mysql.png"
+                  alt=""
+                  class="grid-cols-1 bg-white hover:shadow-sm hover:border-orange-500 hover:shadow-orange-500 hover:brightness-105 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/pythonLogo.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-yellow-500 hover:shadow-yellow-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-cyan-50 p-2 border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/C++Icon.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-indigo-950 py-[0.4rem] px-2 border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/figmaIcon.webp"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-blue-500 hover:shadow-blue-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/gptIcon.webp"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-white hover:shadow-white hover:brightness-100 brightness-90 duration-300 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/git.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm hover:border-red-500 hover:shadow-red-500 hover:brightness-125 duration-300 w-full block aspect-square object-contain bg-orange-950 p-2 border border-gray-700 rounded-xl"
+                />
+                <img
+                  src="public/img/github.png"
+                  alt=""
+                  class="grid-cols-1 hover:shadow-sm bg-slate-200 hover:border-purple-500 hover:shadow-purple-500 hover:brightness-125 duration-300 p-1 w-full block aspect-square object-contain border border-gray-700 rounded-xl"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <footer>
-        <div class="pt-8 pb-16 hidden lg:block">
-            <div class="flex items-center justify-between py-8 px-5 lg:px-16">
-                <div class="text-sm">
-                    <img src="public/img/Kcube.svg" alt="" class="h-16 my-8">
-                    <div class="font-semibold">© 2024 · Danial Kcube</div>
-                    <div class="font-mono">All Right Reserved</div>
-                </div>
-                <div class="text-sm">
-                    <div class="h-16 w-full my-8 flex items-center justify-end px-2">
-                        <a href="#hero" class="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center hover:bg-black duration-300 border border-white/20 hover:shadow-md hover:border-red-500 hover:shadow-red-500/40">
-                            <img src="public/img/upArrow.svg" alt="" class="brightness-50">
-                        </a>
-                    </div>
-                    <div class="font-semibold">Created with ❤️  in Myanmar</div>
-                    <div class="font-mono">Made in Mandalay</div>
-                </div>
+      <div class="pt-8 pb-16 hidden lg:block">
+        <div class="flex items-center justify-between py-8 px-5 lg:px-16">
+          <div class="text-sm">
+            <img src="public/img/Kcube.svg" alt="" class="h-16 my-8" />
+            <div class="font-semibold">© 2024 · Danial Kcube</div>
+            <div class="font-mono">All Right Reserved</div>
+          </div>
+          <div class="text-sm">
+            <div class="h-16 w-full my-8 flex items-center justify-end px-2">
+              <a
+                href="#top"
+                class="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center hover:bg-black duration-300 border border-white/20 hover:shadow-md hover:border-red-500 hover:shadow-red-500/40"
+              >
+                <img
+                  src="public/img/upArrow.svg"
+                  alt=""
+                  class="brightness-50"
+                />
+              </a>
             </div>
-            <div class="flex justify-center cap1 text-6xl md:text-8xl xl:text-10xl italic font-semibold animate-foot">
-                <span class="">THANK</span>
-                <img src="public/img/cube.svg" class="hover:invert duration-500 hover:cursor-pointer w-4 md:w-10 xl:w-16 animate-spin" alt=""> 
-                <span class="pe-2">YOU</span>
-            </div>
+            <div class="font-semibold">Created with ❤️ in Myanmar</div>
+            <div class="font-mono">Made in Mandalay</div>
+          </div>
         </div>
-        <div class="pb-5 lg:hidden">
-            <div class="py-8 flex flex-col items-center justify-center text-center">
-                <div class="text-sm">
-                    <img src="public/img/Kcube.svg" alt="" class="h-16 my-2 mx-auto">
-                    <div class="font-semibold">© 2024 · Danial Kcube</div>
-                    <div class="font-mono">All Right Reserved</div>
-                </div>
-                <div class="text-sm w-full pt-8">
-                    <div class="font-semibold">Created with ❤️  in Myanmar</div>
-                    <div class="font-mono">Made in Mandalay</div>
-                    <div class="w-full flex items-center justify-end px-5">
-                        <a href="#hero" class="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center hover:bg-black duration-300 border border-white/20 hover:shadow-md hover:border-red-500 hover:shadow-red-500/40">
-                            <img src="public/img/upArrow.svg" alt="" class="brightness-50">
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div
+          class="flex justify-center cap1 text-6xl md:text-8xl xl:text-10xl italic font-semibold animate-foot"
+        >
+          <span class="pe-2">THANK</span>
+          <img
+            src="public/img/cube.svg"
+            class="hover:invert duration-500 hover:cursor-pointer w-4 md:w-10 xl:w-16 animate-spin"
+            alt=""
+          />
+          <span class="pe-2">YOU</span>
         </div>
+      </div>
+      <div class="pb-5 lg:hidden">
+        <div class="py-8 flex flex-col items-center justify-center text-center">
+          <div class="text-sm">
+            <img src="public/img/Kcube.svg" alt="" class="h-16 my-2 mx-auto" />
+            <div class="font-semibold">© 2024 · Danial Kcube</div>
+            <div class="font-mono">All Right Reserved</div>
+          </div>
+          <div class="text-sm w-full pt-8">
+            <div class="font-semibold">Created with ❤️ in Myanmar</div>
+            <div class="font-mono">Made in Mandalay</div>
+            <div class="w-full flex items-center justify-end px-5">
+              <a
+                href="#top"
+                class="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center hover:bg-black duration-300 border border-white/20 hover:shadow-md hover:border-red-500 hover:shadow-red-500/40"
+              >
+                <img
+                  src="public/img/upArrow.svg"
+                  alt=""
+                  class="brightness-50"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Bottom navbar : initially hidden -->
-    <div class="fixed bottom-0 left-0 w-screen text-white py-4 px-6 translate-y-full duration-700" id="bottomNavbar">
-        <div class="mx-auto flex justify-center gap-2">
-            <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/10">
-                <img src="public/img/facebookIcon.svg" alt="" class="w-3">
-            </a>
-            <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/10">
-                <img src="public/img/envelope-regular.svg" alt="" class="w-3">
-            </a>
-            <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/10">
-                <img src="public/img/linkedin.svg" alt="" class="w-3">
-            </a>
-            <a href="#" class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 bg-white/10">
-                <img src="public/img/twitter.svg" alt="" class="w-3">
-            </a>
-        </div>
+    <div
+      class="fixed bottom-0 left-0 w-screen text-white py-4 px-6 translate-y-full duration-700"
+      id="bottomNavbar"
+    >
+      <div class="mx-auto flex justify-center gap-2">
+        <a
+          href="#"
+          class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:shadow-sm hover:shadow-blue-500 hover:border-blue-500 duration-300 bg-white/10"
+        >
+          <img src="public/img/facebookIcon.svg" alt="" class="w-3" />
+        </a>
+        <a
+          href="#"
+          class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:shadow-sm hover:shadow-green-500 hover:border-green-500 duration-300 bg-white/10"
+        >
+          <img src="public/img/envelope-regular.svg" alt="" class="w-3" />
+        </a>
+        <a
+          href="#"
+          class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:shadow-sm hover:shadow-purple-500 hover:border-purple-500 duration-300 bg-white/10"
+        >
+          <img src="public/img/linkedin.svg" alt="" class="w-3" />
+        </a>
+        <a
+          href="https://t.me/DanialK007"
+          class="inline-block p-2 rounded-full backdrop-blur-md border border-white/10 hover:shadow-sm hover:shadow-blue-500 hover:border-blue-500 duration-300 bg-white/10"
+        >
+          <img src="public/img/telegram.png" alt="" class="w-3" />
+        </a>
+      </div>
     </div>
 
     <!-- cursor  -->
-    <div class="fixed hidden md:block z-10 w-3 h-3 bg-white animate-pulse rounded-full pointer-events-none duration-300 ease-linear" id="mouseFollow"></div>
+    <!-- <div class="fixed hidden md:block z-10 w-3 h-3 bg-white animate-pulse rounded-full pointer-events-none duration-300 ease-linear" id="mouseFollow"></div> -->
 
     <!-- cursor script -->
-    <script>
+    <!-- <script>
         document.addEventListener('mousemove', (e) => {
             const x = e.clientX;
             const y = e.clientY;
@@ -637,87 +1356,106 @@ world of programming and web development.
                 mouseFollow.classList.add('bg-white','animate-pulse');
             }
         });
-    </script>
+    </script> -->
 
     <!-- bottom navbar : scroll script -->
     <script>
-        document.addEventListener('scroll', () => {
-            const heroHeight = document.getElementById('hero').offsetHeight;
-            const scrollPosition = window.scrollY;
-            const bottomNavbar = document.getElementById('bottomNavbar');
-            const cornorMenu = document.getElementById('cornorMenu');
-            
-            // If scrolled past the hero section, show the bottom navbar and cornorMenu
-            if (scrollPosition > heroHeight) {
-                bottomNavbar.classList.remove('translate-y-full');
-                cornorMenu.classList.remove('myAnimation2');
-                cornorMenu.classList.add('flex-col', 'myAnimation1', 'fade-inX', 'bg-white/5', 'backdrop-blur-md', 'rounded-md');
-            } else {
-                bottomNavbar.classList.add('translate-y-full');
-                cornorMenu.classList.add('myAnimation2');
-                cornorMenu.classList.remove('flex-col', 'myAnimation1', 'fade-inX', 'bg-white/5', 'backdrop-blur-md', 'rounded-md');
-            }
-        });
+      document.addEventListener("scroll", () => {
+        const heroHeight = document.getElementById("hero").offsetHeight;
+        const scrollPosition = window.scrollY;
+        const bottomNavbar = document.getElementById("bottomNavbar");
+        const cornorMenu = document.getElementById("cornorMenu");
+
+        // If scrolled past the hero section, show the bottom navbar and cornorMenu
+        if (scrollPosition > heroHeight) {
+          bottomNavbar.classList.remove("translate-y-full");
+          cornorMenu.classList.remove("myAnimation2");
+          cornorMenu.classList.add(
+            "flex-col",
+            "myAnimation1",
+            "fade-inX",
+            "bg-white/5",
+            "backdrop-blur-md",
+            "rounded-md"
+          );
+        } else {
+          bottomNavbar.classList.add("translate-y-full");
+          cornorMenu.classList.add("myAnimation2");
+          cornorMenu.classList.remove(
+            "flex-col",
+            "myAnimation1",
+            "fade-inX",
+            "bg-white/5",
+            "backdrop-blur-md",
+            "rounded-md"
+          );
+        }
+      });
     </script>
 
     <!-- Heading Animation script -->
     <script>
-        // Function to handle intersection of elements
-        const handleIntersection = (entries, observer, animationClass) => {
-            entries.forEach(entry => {
-                // If element is intersecting
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(animationClass); // Add animation class
-                    observer.unobserve(entry.target); // Stop observing
-                }
-            });
-        };
-
-        // Intersection Observer options
-        const options = {
-            root: null, // Use the viewport as the root
-            rootMargin: '0px', // Margin around the root
-            threshold: 0.2 // 20% of target element must be visible to trigger callback
-        };
-
-        // Create Intersection Observer instances
-        const observer1 = new IntersectionObserver(entries => handleIntersection(entries, observer1, 'animate-appear1'), options);
-        const observer2 = new IntersectionObserver(entries => handleIntersection(entries, observer2, 'animate-appear2'), options);
-
-        // Target elements to observe
-        const sections = [
-            { id: 'selectW', observer: observer1 },
-            { id: 'playG', observer: observer1 },
-            { id: 'aboutM', observer: observer1 },
-            { id: 'sWork', observer: observer2 },
-            { id: 'pGround', observer: observer2 },
-            { id: 'Ame', observer: observer2 }
-        ];
-
-        // Observe the target elements
-        sections.forEach(section => {
-            const element = document.getElementById(section.id);
-            if (element) {
-                section.observer.observe(element);
-            }
+      // Function to handle intersection of elements
+      const handleIntersection = (entries, observer, animationClass) => {
+        entries.forEach((entry) => {
+          // If element is intersecting
+          if (entry.isIntersecting) {
+            entry.target.classList.add(animationClass); // Add animation class
+            observer.unobserve(entry.target); // Stop observing
+          }
         });
+      };
+
+      // Intersection Observer options
+      const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: "0px", // Margin around the root
+        threshold: 0.2, // 20% of target element must be visible to trigger callback
+      };
+
+      // Create Intersection Observer instances
+      const observer1 = new IntersectionObserver(
+        (entries) => handleIntersection(entries, observer1, "animate-appear1"),
+        options
+      );
+      const observer2 = new IntersectionObserver(
+        (entries) => handleIntersection(entries, observer2, "animate-appear2"),
+        options
+      );
+
+      // Target elements to observe
+      const sections = [
+        { id: "selectW", observer: observer1 },
+        { id: "playG", observer: observer1 },
+        { id: "aboutM", observer: observer1 },
+        { id: "sWork", observer: observer2 },
+        { id: "pGround", observer: observer2 },
+        { id: "Ame", observer: observer2 },
+      ];
+
+      // Observe the target elements
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          section.observer.observe(element);
+        }
+      });
     </script>
-    
+
     <!-- menuBtn : small device script-->
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const smMenu = document.getElementById('smMenu');
-        const menuIcon1 = document.getElementById('menuIcon1');
-        const menuIcon2 = document.getElementById('menuIcon2');
-        
-        menuBtn.addEventListener('click', () => {
-            event.preventDefault()
-            smMenu.classList.toggle('hidden');
-            smMenu.classList.toggle('animate-appear3');
-            menuIcon1.classList.toggle('hidden');
-            menuIcon2.classList.toggle('hidden');
-        });
-    </script>
-</body>
+      const menuBtn = document.getElementById("menuBtn");
+      const smMenu = document.getElementById("smMenu");
+      const menuIcon1 = document.getElementById("menuIcon1");
+      const menuIcon2 = document.getElementById("menuIcon2");
 
+      menuBtn.addEventListener("click", () => {
+        event.preventDefault();
+        smMenu.classList.toggle("hidden");
+        smMenu.classList.toggle("animate-appear3");
+        menuIcon1.classList.toggle("hidden");
+        menuIcon2.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>
